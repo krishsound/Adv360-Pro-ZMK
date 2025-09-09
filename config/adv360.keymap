@@ -8,7 +8,7 @@
 
 &mmv {
     time-to-max-speed-ms = <100>;
-    acceleration-exponent = <10>;
+    acceleration-exponent = <6>;
 };
 
 / {
@@ -41,6 +41,18 @@
             quick-tap-ms = <145>;
             require-prior-idle-ms = <120>;
         };
+
+        mmv_fast: mmv_fast {
+            compatible = "zmk,behavior-input-two-axis";
+            label = "MMV_FAST";
+            #binding-cells = <1>;
+            x-input-code = <1>;
+            y-input-code = <1>;
+            trigger-period-ms = <8>;
+            delay-ms = <0>;
+            time-to-max-speed-ms = <200>;
+            acceleration-exponent = <2>;
+        };
     };
 
     keymap {
@@ -49,11 +61,11 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp BACKSLASH  &kp N1               &kp N2              &kp N3         &kp N4          &kp N5  &tog 0                                                         &mo 0        &kp N6  &kp N7             &kp N8         &kp N9          &kp N0              &kp EQUAL
-&kp TAB        &kp Q                &kp W               &kp E          &kp R           &kp T   &none                                                          &none        &kp Y   &kp U              &kp I          &kp O           &kp P               &kp MINUS
-&lt 1 ESCAPE   &hrm_l LEFT_SHIFT A  &hrm_l RALT S       &hrm_l LALT D  &hrm_l LGUI F   &kp G   &to 2            &kp LGUI  &kp LALT      &kp RALT   &kp RGUI   &to 1        &kp H   &hrm_r LGUI J      &hrm_r RALT K  &hrm_r RCTRL L  &hrm_r RSHIFT SEMI  &kp SQT
-&kp LSHFT      &kp Z                &kp X               &kp C          &kp V           &kp B                              &kp HOME      &kp PG_UP                          &kp N   &kp M              &kp COMMA      &kp DOT         &kp FSLH            &kp RSHFT
-&to 0          &kp GRAVE            &mt LCTRL CAPSLOCK  &mt LALT LEFT  &mt LGUI RIGHT          &lt 2 BACKSPACE  &kp DEL   &kp END       &kp PG_DN  &kp ENTER  &lt 1 SPACE          &mt RGUI UP_ARROW  &mt RALT DOWN  &mt RCTRL LBKT  &kp RBKT            &mo 5
+&kp BACKSLASH  &kp N1               &kp N2              &kp N3         &kp N4          &kp N5  &tog 0                                                                &mo 0        &kp N6  &kp N7             &kp N8         &kp N9          &kp N0              &kp EQUAL
+&kp TAB        &kp Q                &kp W               &kp E          &kp R           &kp T   &none                                                                 &none        &kp Y   &kp U              &kp I          &kp O           &kp P               &kp MINUS
+&lt 1 ESCAPE   &hrm_l LEFT_SHIFT A  &hrm_l RALT S       &hrm_l LALT D  &hrm_l LGUI F   &kp G   &to 3            &kp LGUI         &kp LALT      &kp RALT   &kp RGUI   &to 1        &kp H   &hrm_r LGUI J      &hrm_r RALT K  &hrm_r RCTRL L  &hrm_r RSHIFT SEMI  &kp SQT
+&kp LSHFT      &kp Z                &kp X               &kp C          &kp V           &kp B                                     &kp HOME      &kp PG_UP                          &kp N   &kp M              &kp COMMA      &kp DOT         &kp FSLH            &kp RSHFT
+&to 0          &kp GRAVE            &mt LCTRL CAPSLOCK  &mt LALT LEFT  &mt LGUI RIGHT          &lt 3 BACKSPACE  &lt 5 LG(GRAVE)  &kp END       &kp PG_DN  &kp ENTER  &lt 1 SPACE          &mt RGUI UP_ARROW  &mt RALT DOWN  &mt RCTRL LBKT  &kp RBKT            &mo 6
             >;
         };
 
@@ -61,9 +73,19 @@
             bindings = <
 &trans  &trans  &trans  &trans     &trans     &trans  &trans                                         &trans  &kp RA(NUMBER_6)  &kp RA(N7)      &trans          &trans           &trans     &trans
 &trans  &trans  &trans  &trans     &trans     &trans  &trans                                         &trans  &msc SCRL_DOWN    &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &trans     &trans
-&trans  &trans  &trans  &trans     &trans     &trans  &trans     &trans  &trans      &trans  &trans  &to 0   &msc SCRL_UP      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MCLK  &trans
+&trans  &trans  &trans  &trans     &mo 2      &trans  &trans     &trans  &trans      &trans  &trans  &to 0   &msc SCRL_UP      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MCLK  &trans
 &trans  &trans  &trans  &kp RA(C)  &kp RA(M)  &trans                     &trans      &trans                  &msc SCRL_LEFT    &kp RA(M)       &msc SCRL_LEFT  &msc SCRL_RIGHT  &trans     &trans
-&trans  &trans  &trans  &trans     &trans             &mkp LCLK  &trans  &trans      &trans  &trans  &trans                    &mo 3           &trans          &trans           &trans     &trans
+&trans  &trans  &trans  &trans     &trans             &mkp LCLK  &trans  &trans      &trans  &trans  &trans                    &mo 4           &trans          &trans           &trans     &trans
+            >;
+        };
+
+        mouse_fast {
+            bindings = <
+&trans  &trans  &trans  &trans     &trans     &trans  &trans                                         &trans  &kp RA(NUMBER_6)  &kp RA(N7)           &trans               &trans                &trans     &trans
+&trans  &trans  &trans  &trans     &trans     &trans  &trans                                         &trans  &msc SCRL_DOWN    &mkp LCLK            &mmv_fast MOVE_UP    &mkp RCLK             &trans     &trans
+&trans  &trans  &trans  &trans     &trans     &trans  &trans     &trans  &trans      &trans  &trans  &to 0   &msc SCRL_UP      &mmv_fast MOVE_LEFT  &mmv_fast MOVE_DOWN  &mmv_fast MOVE_RIGHT  &mkp MCLK  &trans
+&trans  &trans  &trans  &kp RA(C)  &kp RA(M)  &trans                     &trans      &trans                  &msc SCRL_LEFT    &kp RA(M)            &msc SCRL_LEFT       &msc SCRL_RIGHT       &trans     &trans
+&trans  &trans  &trans  &trans     &trans             &mkp LCLK  &trans  &trans      &trans  &trans  &trans                    &mo 4                &trans               &trans                &trans     &trans
             >;
         };
 
@@ -90,11 +112,11 @@
         fn {
             display-name = "Fn";
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &tog 0                                      &mo 0   &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans   &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans   &trans   &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans   &trans   &trans
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &tog 0                                      &mo 0             &kp F7  &kp F8        &kp F9            &kp F10     &kp F11  &kp F12
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans            &trans  &kp C_VOL_DN  &kp C_VOL_UP      &trans      &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans            &trans  &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT  &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                            &trans  &trans        &trans            &trans      &trans   &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &kp C_PLAY_PAUSE          &trans        &trans            &trans      &trans   &trans
             >;
         };
 
