@@ -11,14 +11,32 @@
         #include "macros.dtsi"
       #include "version.dtsi"
 
-        hm: homerow_mods {
+        hrm_r: hrm_r {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+            label = "HRM_R";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <190>;
             quick_tap_ms = <175>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <120>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 34 35 36 46 47 48 49 50 51 52 60 61 62 63 64 65 66 67>;
+        };
+
+        hrm_l: hrm_l {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_L";
+            #binding-cells = <2>;
+            tapping-term-ms = <190>;
+            quick_tap_ms = <175>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <7 8 9 10 11 12 13 21 22 23 24 25 26 27 38 39 40 41 42 43 44 45 54 55 56 57 58 59 68 69 70 71 72 73 74 75 37 53>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <120>;
         };
     };
 
@@ -28,11 +46,11 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp EQUAL  &kp N1            &kp N2    &kp N3    &kp N4     &kp N5  &tog 1                                                   &mo 3        &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp TAB    &kp Q             &kp W     &kp E     &kp R      &kp T   &none                                                    &none        &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
-&kp ESC    &hm LEFT_SHIFT A  &kp S     &kp D     &kp F      &kp G   &none     &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &none        &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z             &kp X     &kp C     &kp V      &kp B                        &kp HOME      &kp PG_UP                          &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-&mo 2      &kp GRAVE         &kp CAPS  &kp LEFT  &kp RIGHT          &kp BSPC  &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &lt 4 SPACE          &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &mo 2
+&kp EQUAL     &kp N1               &kp N2         &kp N3         &kp N4         &kp N5  &tog 1                                                   &mo 3        &kp N6  &kp N7         &kp N8         &kp N9          &kp N0              &kp MINUS
+&kp TAB       &kp Q                &kp W          &kp E          &kp R          &kp T   &none                                                    &none        &kp Y   &kp U          &kp I          &kp O           &kp P               &kp BSLH
+&lt 4 ESCAPE  &hrm_l A LEFT_SHIFT  &hrm_l RALT S  &hrm_l LALT D  &hrm_l LGUI F  &kp G   &none     &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &none        &kp H   &hrm_r LGUI J  &hrm_r RALT K  &hrm_r RCTRL L  &hrm_r RSHIFT SEMI  &kp SQT
+&kp LSHFT     &kp Z                &kp X          &kp C          &kp V          &kp B                        &kp HOME      &kp PG_UP                          &kp N   &kp M          &kp COMMA      &kp DOT         &kp FSLH            &kp RSHFT
+&mo 2         &kp GRAVE            &kp CAPS       &kp LEFT       &kp RIGHT              &kp BSPC  &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &lt 4 SPACE          &kp UP         &kp DOWN       &kp LBKT        &kp RBKT            &mo 2
             >;
         };
 
@@ -76,6 +94,16 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans      &trans  &trans  &trans  &msc SCRL_DOWN  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MCLK  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                     &trans      &trans                  &msc SCRL_LEFT  &msc SCRL_RIGHT  &trans          &trans           &trans     &trans
 &trans  &trans  &trans  &trans  &trans          &mkp LCLK  &trans  &trans      &trans  &trans  &trans                  &trans           &trans          &trans           &trans     &trans
+            >;
+        };
+
+        layer_5 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
