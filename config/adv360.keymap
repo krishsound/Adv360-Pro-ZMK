@@ -7,10 +7,8 @@
 #include <dt-bindings/zmk/rgb.h>
 
 &mmv {
-    time-to-max-speed-ms = <50>;
+    time-to-max-speed-ms = <100>;
     acceleration-exponent = <10>;
-    delay-ms = <0>;
-    trigger-period-ms = <5>;
 };
 
 / {
