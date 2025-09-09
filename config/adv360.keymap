@@ -61,11 +61,11 @@
 
         mouse {
             bindings = <
-&trans  &trans  &trans  &trans     &trans     &trans  &trans                                         &trans  &kp RA(NUMBER_6)  &kp RA(N7)       &trans          &trans           &trans     &trans
-&trans  &trans  &trans  &trans     &trans     &trans  &trans                                         &trans  &msc SCRL_DOWN    &mkp LCLK        &mmv MOVE_UP    &mkp RCLK        &trans     &trans
-&trans  &trans  &trans  &trans     &trans     &trans  &trans     &trans  &trans      &trans  &trans  &to 0   &msc SCRL_UP      &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MCLK  &trans
-&trans  &trans  &trans  &kp RA(C)  &kp RA(M)  &trans                     &trans      &trans                  &msc SCRL_LEFT    &msc SCRL_RIGHT  &trans          &trans           &trans     &trans
-&trans  &trans  &trans  &trans     &trans             &mkp LCLK  &trans  &trans      &trans  &trans  &trans                    &mo 3            &trans          &trans           &trans     &trans
+&trans  &trans  &trans  &trans     &trans     &trans  &trans                                         &trans  &kp RA(NUMBER_6)  &kp RA(N7)      &trans          &trans           &trans     &trans
+&trans  &trans  &trans  &trans     &trans     &trans  &trans                                         &trans  &msc SCRL_DOWN    &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &trans     &trans
+&trans  &trans  &trans  &trans     &trans     &trans  &trans     &trans  &trans      &trans  &trans  &to 0   &msc SCRL_UP      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MCLK  &trans
+&trans  &trans  &trans  &kp RA(C)  &kp RA(M)  &trans                     &trans      &trans                  &msc SCRL_LEFT    &trans          &msc SCRL_LEFT  &msc SCRL_RIGHT  &trans     &trans
+&trans  &trans  &trans  &trans     &trans             &mkp LCLK  &trans  &trans      &trans  &trans  &trans                    &mo 3           &trans          &trans           &trans     &trans
             >;
         };
 
