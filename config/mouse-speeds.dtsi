@@ -1,28 +1,63 @@
+// mouse-speeds.dtsi
 / {
+    /* Define the input processors for different speeds */
+    mouse_slow: mouse_slow {
+        compatible = "zmk,input-processor-scaler";
+        #input-processor-cells = <0>;
+        type = <1>;  // INPUT_EV_REL = 1
+        codes = <0>, <1>;  // INPUT_REL_X = 0, INPUT_REL_Y = 1
+        multiplier = <1>;
+        divisor = <9>;
+    };
+    
+    mouse_fast: mouse_fast {
+        compatible = "zmk,input-processor-scaler";
+        #input-processor-cells = <0>;
+        type = <1>;
+        codes = <0>, <1>;
+        multiplier = <3>;
+        divisor = <1>;
+    };
+    
+    mouse_warp: mouse_warp {
+        compatible = "zmk,input-processor-scaler";
+        #input-processor-cells = <0>;
+        type = <1>;
+        codes = <0>, <1>;
+        multiplier = <12>;
+        divisor = <1>;
+    };
+
+    /* Create different mouse behaviors with processors */
     behaviors {
-        // Create different mouse behaviors with processors baked in
         mms: mouse_move_slow {
             compatible = "zmk,behavior-input-two-axis";
             #binding-cells = <1>;
-            x-input-code = <INPUT_REL_X>;
-            y-input-code = <INPUT_REL_Y>;
-            processors = <&mouse_slow 0 0>;
+            x-input-code = <0>;  // INPUT_REL_X
+            y-input-code = <1>;  // INPUT_REL_Y
+            time-to-max-speed-ms = <300>;
+            acceleration-exponent = <1>;
+            processors = <&mouse_slow>;
         };
         
         mmf: mouse_move_fast {
             compatible = "zmk,behavior-input-two-axis";
             #binding-cells = <1>;
-            x-input-code = <INPUT_REL_X>;
-            y-input-code = <INPUT_REL_Y>;
-            processors = <&mouse_fast 0 0>;
+            x-input-code = <0>;
+            y-input-code = <1>;
+            time-to-max-speed-ms = <200>;
+            acceleration-exponent = <1>;
+            processors = <&mouse_fast>;
         };
         
         mmw: mouse_move_warp {
             compatible = "zmk,behavior-input-two-axis";
             #binding-cells = <1>;
-            x-input-code = <INPUT_REL_X>;
-            y-input-code = <INPUT_REL_Y>;
-            processors = <&mouse_warp 0 0>;
+            x-input-code = <0>;
+            y-input-code = <1>;
+            time-to-max-speed-ms = <100>;
+            acceleration-exponent = <1>;
+            processors = <&mouse_warp>;
         };
     };
 };
