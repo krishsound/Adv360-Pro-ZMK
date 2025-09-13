@@ -1,1 +1,34 @@
-
+// mouse-speeds-adv360.dtsi
+/ {
+    behaviors {
+        // Slow mouse - no acceleration, slow speed
+        mms: mouse_move_slow {
+            compatible = "zmk,behavior-input-two-axis";
+            #binding-cells = <1>;
+            x-input-code = <0>;
+            y-input-code = <1>;
+            time-to-max-speed-ms = <1500>;
+            acceleration-exponent = <0>;
+        };
+        
+        // Normal mouse - default from Adv360
+        mmn: mouse_move_normal {
+            compatible = "zmk,behavior-input-two-axis";
+            #binding-cells = <1>;
+            x-input-code = <0>;
+            y-input-code = <1>;
+            time-to-max-speed-ms = <300>;
+            acceleration-exponent = <1>;
+        };
+        
+        // Fast mouse - instant speed
+        mmf: mouse_move_fast {
+            compatible = "zmk,behavior-input-two-axis";
+            #binding-cells = <1>;
+            x-input-code = <0>;
+            y-input-code = <1>;
+            time-to-max-speed-ms = <0>;
+            acceleration-exponent = <0>;
+        };
+    };
+};
