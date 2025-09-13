@@ -9,7 +9,7 @@
 
 / {
     behaviors {
-        #include "macros.dtsi"
+      #include "macros.dtsi"
       #include "version.dtsi"
 
         hrm_r: hrm_r {
@@ -64,42 +64,42 @@
         };
 
         mouse {
-            bindings = <
+            bindings = 
 &trans  &trans  &trans  &trans     &trans     &trans  &trans                                         &trans  &kp RA(NUMBER_6)  &kp RA(N7)      &trans          &trans           &trans     &trans
 &trans  &trans  &trans  &trans     &trans     &trans  &trans                                         &trans  &msc SCRL_DOWN    &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &trans     &trans
-&trans  &trans  &trans  &trans     &mo 6      &trans  &trans     &trans  &trans      &trans  &trans  &to 0   &msc SCRL_UP      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MCLK  &trans
-&trans  &trans  &trans  &kp RA(C)  &kp RA(M)  &trans                     &trans      &trans                  &msc SCRL_LEFT    &kp RA(M)       &msc SCRL_LEFT  &msc SCRL_RIGHT  &trans     &trans
+&trans  &trans  &trans  &mo 3      &mo 5      &trans  &trans     &trans  &trans      &trans  &trans  &to 0   &msc SCRL_UP      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MCLK  &trans
+&trans  &trans  &trans  &kp RA(C)  &mo 4      &trans                     &trans      &trans                  &msc SCRL_LEFT    &kp RA(M)       &msc SCRL_LEFT  &msc SCRL_RIGHT  &trans     &trans
 &trans  &trans  &trans  &trans     &trans             &mkp LCLK  &trans  &trans      &trans  &trans  &trans                    &trans          &trans          &trans           &trans     &trans
             >;
         };
 
         mouse_slow {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+            bindings = 
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans           &trans           &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans           &mms MOVE_UP     &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &mms MOVE_LEFT   &mms MOVE_DOWN   &mms MOVE_RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans           &trans           &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans           &trans           &trans           &trans  &trans
             >;
         };
 
         mouse_warp {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+            bindings = 
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans           &trans           &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans           &mmw MOVE_UP     &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &mmw MOVE_LEFT   &mmw MOVE_DOWN   &mmw MOVE_RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans           &trans           &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans           &trans           &trans           &trans  &trans
             >;
         };
 
         mouse_fast {
-            bindings = <
-&trans  &trans  &trans  &trans     &trans     &trans  &trans                                         &trans  &kp RA(NUMBER_6)  &kp RA(N7)  &trans          &trans           &trans     &trans
-&trans  &trans  &trans  &trans     &trans     &trans  &trans                                         &trans  &msc SCRL_DOWN    &mkp LCLK   &none           &mkp RCLK        &trans     &trans
-&trans  &trans  &trans  &trans     &trans     &trans  &trans     &trans  &trans      &trans  &trans  &to 0   &msc SCRL_UP      &none       &none           &none            &mkp MCLK  &trans
-&trans  &trans  &trans  &kp RA(C)  &kp RA(M)  &trans                     &trans      &trans                  &msc SCRL_LEFT    &kp RA(M)   &msc SCRL_LEFT  &msc SCRL_RIGHT  &trans     &trans
-&trans  &trans  &trans  &trans     &trans             &mkp LCLK  &trans  &trans      &trans  &trans  &trans                    &mo 7       &trans          &trans           &trans     &trans
+            bindings = 
+&trans  &trans  &trans  &trans     &trans     &trans  &trans                                         &trans  &kp RA(NUMBER_6)  &kp RA(N7)      &trans          &trans           &trans     &trans
+&trans  &trans  &trans  &trans     &trans     &trans  &trans                                         &trans  &msc SCRL_DOWN    &mkp LCLK       &mmf MOVE_UP    &mkp RCLK        &trans     &trans
+&trans  &trans  &trans  &trans     &trans     &trans  &trans     &trans  &trans      &trans  &trans  &to 0   &msc SCRL_UP      &mmf MOVE_LEFT  &mmf MOVE_DOWN  &mmf MOVE_RIGHT  &mkp MCLK  &trans
+&trans  &trans  &trans  &kp RA(C)  &kp RA(M)  &trans                     &trans      &trans                  &msc SCRL_LEFT    &kp RA(M)       &msc SCRL_LEFT  &msc SCRL_RIGHT  &trans     &trans
+&trans  &trans  &trans  &trans     &trans             &mkp LCLK  &trans  &trans      &trans  &trans  &trans                    &trans          &trans          &trans           &trans     &trans
             >;
         };
 
