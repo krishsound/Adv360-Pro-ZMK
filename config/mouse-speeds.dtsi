@@ -1,0 +1,34 @@
+// mouse-speeds.dtsi
+#include <dt-bindings/zmk/mouse.h>
+
+/ {
+    /* Define the input processors for different speeds */
+    input_processors {
+        mouse_slow: mouse_slow {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_X INPUT_REL_Y>;
+            multiplier = <1>;
+            divisor = <9>;  // 1/9 speed
+        };
+        
+        mouse_fast: mouse_fast {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_X INPUT_REL_Y>;
+            multiplier = <3>;
+            divisor = <1>;  // 3x speed
+        };
+        
+        mouse_warp: mouse_warp {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_X INPUT_REL_Y>;
+            multiplier = <12>;
+            divisor = <1>;  // 12x speed
+        };
+    };
+};
