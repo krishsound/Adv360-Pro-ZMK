@@ -1,4 +1,4 @@
-// mouse-speeds-adv360.dtsi
+// mouse-speeds.dtsi
 / {
     behaviors {
         // Slow mouse - no acceleration, slow speed
