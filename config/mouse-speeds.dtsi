@@ -1,34 +1,28 @@
-// mouse-speeds.dtsi
-#include <dt-bindings/zmk/mouse.h>
-
 / {
-    /* Define the input processors for different speeds */
-    input_processors {
-        mouse_slow: mouse_slow {
-            compatible = "zmk,input-processor-scaler";
-            #input-processor-cells = <2>;
-            type = <INPUT_EV_REL>;
-            codes = <INPUT_REL_X INPUT_REL_Y>;
-            multiplier = <1>;
-            divisor = <9>;  // 1/9 speed
+    behaviors {
+        // Create different mouse behaviors with processors baked in
+        mms: mouse_move_slow {
+            compatible = "zmk,behavior-input-two-axis";
+            #binding-cells = <1>;
+            x-input-code = <INPUT_REL_X>;
+            y-input-code = <INPUT_REL_Y>;
+            processors = <&mouse_slow 0 0>;
         };
         
-        mouse_fast: mouse_fast {
-            compatible = "zmk,input-processor-scaler";
-            #input-processor-cells = <2>;
-            type = <INPUT_EV_REL>;
-            codes = <INPUT_REL_X INPUT_REL_Y>;
-            multiplier = <3>;
-            divisor = <1>;  // 3x speed
+        mmf: mouse_move_fast {
+            compatible = "zmk,behavior-input-two-axis";
+            #binding-cells = <1>;
+            x-input-code = <INPUT_REL_X>;
+            y-input-code = <INPUT_REL_Y>;
+            processors = <&mouse_fast 0 0>;
         };
         
-        mouse_warp: mouse_warp {
-            compatible = "zmk,input-processor-scaler";
-            #input-processor-cells = <2>;
-            type = <INPUT_EV_REL>;
-            codes = <INPUT_REL_X INPUT_REL_Y>;
-            multiplier = <12>;
-            divisor = <1>;  // 12x speed
+        mmw: mouse_move_warp {
+            compatible = "zmk,behavior-input-two-axis";
+            #binding-cells = <1>;
+            x-input-code = <INPUT_REL_X>;
+            y-input-code = <INPUT_REL_Y>;
+            processors = <&mouse_warp 0 0>;
         };
     };
 };
