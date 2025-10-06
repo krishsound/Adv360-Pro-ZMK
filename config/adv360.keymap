@@ -15,12 +15,12 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HRM_R";
             #binding-cells = <2>;
-            tapping-term-ms = <180>;
-            flavor = "hold-preferred";
+            tapping-term-ms = <150>;
+            flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
 
             quick-tap-ms = <145>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <80>;
             hold-trigger-key-positions = <0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 34 46 47 48 49 50 51 60 61 62 63 64 65 66 52 36 35 67 70 68 69 37 38 53>;
         };
 
@@ -28,26 +28,13 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HRM_L";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
 
             hold-trigger-key-positions = <7 8 9 10 11 12 13 21 22 23 24 25 26 27 39 40 41 42 43 44 45 54 55 56 57 58 59 71 72 73 74 75 53 69 70 38 37 68 35 36 52 65 66 67>;
             quick-tap-ms = <145>;
-            require-prior-idle-ms = <120>;
-        };
-
-        new_behavior: new_behavior {
-            compatible = "zmk,behavior-hold-tap";
-            label = "NEW_BEHAVIOR";
-            #binding-cells = <2>;
-            tapping-term-ms = <180>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-
-            hold-trigger-key-positions = <7 8 9 10 11 12 13 21 22 23 24 25 26 27 39 40 41 42 43 44 45 54 55 56 57 58 59 71 72 73 74 75 53 69 70 38 37 68 35 36 52 65 66 67>;
-            quick-tap-ms = <145>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <80>;
         };
     };
 
@@ -59,9 +46,9 @@
             bindings = <
 &kp BACKSLASH  &kp N1               &kp N2              &kp N3         &kp N4          &kp N5  &tog 0                                                                &mo 0        &kp N6  &kp N7             &kp N8         &kp N9          &kp N0              &kp EQUAL
 &kp TAB        &kp Q                &kp W               &kp E          &kp R           &kp T   &none                                                                 &none        &kp Y   &kp U              &kp I          &kp O           &kp P               &kp MINUS
-&lt 2 ESCAPE   &hrm_l LEFT_SHIFT A  &hrm_l RALT S       &hrm_l LALT D  &hrm_l LGUI F   &kp G   &to 1            &kp LGUI         &kp LALT      &kp RALT   &kp RGUI   &to 2        &kp H   &hrm_r LGUI J      &hrm_r RALT K  &hrm_r RCTRL L  &hrm_r RSHIFT SEMI  &kp SQT
+&lt 9 ESCAPE   &hrm_l LEFT_SHIFT A  &hrm_l RALT S       &hrm_l LALT D  &hrm_l LGUI F   &kp G   &to 1            &kp LGUI         &kp LALT      &kp RALT   &kp RGUI   &to 2        &kp H   &hrm_r LGUI J      &hrm_r RALT K  &hrm_r RCTRL L  &hrm_r RSHIFT SEMI  &kp SQT
 &kp LSHFT      &kp Z                &kp X               &kp C          &kp V           &kp B                                     &kp HOME      &kp PG_UP                          &kp N   &kp M              &kp COMMA      &kp DOT         &kp FSLH            &kp RSHFT
-&to 0          &kp GRAVE            &mt LCTRL CAPSLOCK  &mt LALT LEFT  &mt LGUI RIGHT          &lt 1 BACKSPACE  &lt 7 LG(GRAVE)  &kp END       &kp PG_DN  &kp ENTER  &lt 2 SPACE          &mt RGUI UP_ARROW  &mt RALT DOWN  &mt RCTRL LBKT  &kp RBKT            &mo 8
+&to 0          &kp GRAVE            &mt LCTRL CAPSLOCK  &mt LALT LEFT  &mt LGUI RIGHT          &lt 1 BACKSPACE  &lt 7 LG(GRAVE)  &kp END       &kp PG_DN  &kp ENTER  &lt 9 SPACE          &mt RGUI UP_ARROW  &mt RALT DOWN  &mt RCTRL LBKT  &kp RBKT            &mo 8
             >;
         };
 
@@ -144,6 +131,17 @@
 &studio_unlock  &trans        &trans        &trans        &trans        &trans        &trans       &trans  &trans      &bt BT_CLR  &trans      &trans           &trans  &trans      &trans      &trans  &trans  &trans
 &trans          &trans        &trans        &trans        &trans        &trans                             &trans      &trans                                   &trans  &trans      &trans      &trans  &trans  &trans
 &trans          &trans        &trans        &trans        &trans                      &trans       &trans  &trans      &trans      &bl BL_TOG  &rgb_ug RGB_TOG          &bl BL_INC  &bl BL_DEC  &trans  &trans  &trans
+            >;
+        };
+
+        mouse_karabiner {
+            display-name = "Base";
+            bindings = <
+&kp BACKSLASH  &kp N1     &kp N2              &kp N3         &kp N4          &kp N5  &tog 0                                                                &mo 0      &kp N6  &kp N7             &kp N8         &kp N9          &kp N0         &kp EQUAL
+&kp TAB        &kp Q      &kp W               &kp E          &kp R           &kp T   &trans                                                                &trans     &kp Y   &kp U              &kp RA(I)      &kp O           &kp P          &kp MINUS
+&kp ESC        &kp A      &kp S               &kp D          &kp F           &kp G   &to 1            &kp LGUI         &kp LALT      &kp RALT   &kp RGUI   &to 0      &kp H   &kp RA(J)          &kp RA(K)      &kp RA(L)       &kp SEMICOLON  &kp SQT
+&kp LSHFT      &kp Z      &kp X               &kp C          &kp V           &kp B                                     &kp HOME      &kp PG_UP                        &kp N   &kp M              &kp COMMA      &kp DOT         &kp FSLH       &kp RSHFT
+&to 0          &kp GRAVE  &mt LCTRL CAPSLOCK  &mt LALT LEFT  &mt LGUI RIGHT          &lt 1 BACKSPACE  &lt 7 LG(GRAVE)  &kp END       &kp PG_DN  &kp ENTER  &kp SPACE          &mt RGUI UP_ARROW  &mt RALT DOWN  &mt RCTRL LBKT  &kp RBKT       &mo 8
             >;
         };
     };
