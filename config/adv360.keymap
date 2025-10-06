@@ -46,7 +46,7 @@
             bindings = <
 &kp BACKSLASH  &kp N1               &kp N2              &kp N3         &kp N4          &kp N5  &tog 0                                                                &mo 0        &kp N6  &kp N7             &kp N8         &kp N9          &kp N0              &kp EQUAL
 &kp TAB        &kp Q                &kp W               &kp E          &kp R           &kp T   &none                                                                 &none        &kp Y   &kp U              &kp I          &kp O           &kp P               &kp MINUS
-&lt 9 ESCAPE   &hrm_l LEFT_SHIFT A  &hrm_l RALT S       &hrm_l LALT D  &hrm_l LGUI F   &kp G   &to 1            &kp LGUI         &kp LALT      &kp RALT   &kp RGUI   &to 2        &kp H   &hrm_r LGUI J      &hrm_r RALT K  &hrm_r RCTRL L  &hrm_r RSHIFT SEMI  &kp SQT
+&lt 9 ESC      &hrm_l LEFT_SHIFT A  &hrm_l RALT S       &hrm_l LALT D  &hrm_l LGUI F   &kp G   &to 1            &kp LGUI         &kp LALT      &kp RALT   &kp RGUI   &to 2        &kp H   &hrm_r LGUI J      &hrm_r RALT K  &hrm_r RCTRL L  &hrm_r RSHIFT SEMI  &kp SQT
 &kp LSHFT      &kp Z                &kp X               &kp C          &kp V           &kp B                                     &kp HOME      &kp PG_UP                          &kp N   &kp M              &kp COMMA      &kp DOT         &kp FSLH            &kp RSHFT
 &to 0          &kp GRAVE            &mt LCTRL CAPSLOCK  &mt LALT LEFT  &mt LGUI RIGHT          &lt 1 BACKSPACE  &lt 7 LG(GRAVE)  &kp END       &kp PG_DN  &kp ENTER  &lt 9 SPACE          &mt RGUI UP_ARROW  &mt RALT DOWN  &mt RCTRL LBKT  &kp RBKT            &mo 8
             >;
@@ -137,11 +137,11 @@
         mouse_karabiner {
             display-name = "Base";
             bindings = <
-&kp BACKSLASH  &kp N1     &kp N2              &kp N3         &kp N4          &kp N5     &tog 0                                                              &mo 0      &kp N6     &kp N7             &kp N8         &kp N9          &kp N0             &kp EQUAL
-&kp TAB        &kp Q      &kp W               &kp E          &kp R           &kp T      &trans                                                              &trans     &kp RA(Y)  &kp RA(U)          &kp RA(I)      &kp RA(O)       &kp P              &kp MINUS
-&kp ESC        &kp A      &kp RA(S)           &kp RA(D)      &kp RA(F)       &kp RA(G)  &to 1          &kp LGUI         &kp LALT      &kp RALT   &kp RGUI   &to 0      &kp RA(H)  &kp RA(J)          &kp RA(K)      &kp RA(L)       &kp RA(SEMICOLON)  &kp SQT
-&kp LSHFT      &kp Z      &kp X               &kp C          &kp V           &kp B                                      &kp HOME      &kp PG_UP                        &kp RA(N)  &kp RA(M)          &kp RA(COMMA)  &kp RA(DOT)     &kp RA(FSLH)       &kp RSHFT
-&to 0          &kp GRAVE  &mt LCTRL CAPSLOCK  &mt LALT LEFT  &mt LGUI RIGHT             &kp RA(SPACE)  &lt 7 LG(GRAVE)  &kp END       &kp PG_DN  &kp ENTER  &kp SPACE             &mt RGUI UP_ARROW  &mt RALT DOWN  &mt RCTRL LBKT  &kp RBKT           &mo 8
+&kp BACKSLASH  &kp RA(N1)  &kp RA(N2)          &kp RA(N3)     &kp RA(N4)      &kp RA(N5)  &tog 0                                                              &mo 0      &kp RA(N6)  &kp RA(N7)             &kp RA(N8)     &kp RA(N9)      &kp RA(N0)         &kp RA(EQUAL)
+&kp TAB        &kp RA(Q)   &kp RA(W)           &kp E          &kp R           &kp RA(T)   &trans                                                              &trans     &kp RA(Y)   &kp RA(U)              &kp RA(I)      &kp RA(O)       &kp P              &kp RA(MINUS)
+&kp ESC        &kp RA(A)   &kp RA(S)           &kp RA(D)      &kp RA(F)       &kp RA(G)   &to 1          &kp LGUI         &kp LALT      &kp RALT   &kp RGUI   &to 0      &kp RA(H)   &kp RA(J)              &kp RA(K)      &kp RA(L)       &kp RA(SEMICOLON)  &kp RA(SQT)
+&kp LSHFT      &kp RA(Z)   &kp RA(X)           &kp RA(C)      &kp RA(V)       &kp RA(B)                                   &kp HOME      &kp PG_UP                        &kp RA(N)   &kp RA(M)              &kp RA(COMMA)  &kp RA(DOT)     &kp RA(FSLH)       &kp RSHFT
+&to 0          &kp GRAVE   &mt LCTRL CAPSLOCK  &mt LALT LEFT  &mt LGUI RIGHT              &kp RA(SPACE)  &lt 7 LG(GRAVE)  &kp END       &kp PG_DN  &kp ENTER  &kp SPACE              &mt RGUI RA(UP_ARROW)  &mt RALT DOWN  &mt RCTRL LBKT  &kp RBKT           &mo 8
             >;
         };
     };
