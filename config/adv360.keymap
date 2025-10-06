@@ -137,11 +137,11 @@
         mouse_karabiner {
             display-name = "Base";
             bindings = <
-&kp BACKSLASH  &kp N1     &kp N2              &kp N3         &kp N4          &kp N5  &tog 0                                                                &mo 0      &kp N6  &kp N7             &kp N8         &kp N9          &kp N0         &kp EQUAL
-&kp TAB        &kp Q      &kp W               &kp E          &kp R           &kp T   &trans                                                                &trans     &kp Y   &kp U              &kp RA(I)      &kp O           &kp P          &kp MINUS
-&kp ESC        &kp A      &kp S               &kp D          &kp F           &kp G   &to 1            &kp LGUI         &kp LALT      &kp RALT   &kp RGUI   &to 0      &kp H   &kp RA(J)          &kp RA(K)      &kp RA(L)       &kp SEMICOLON  &kp SQT
-&kp LSHFT      &kp Z      &kp X               &kp C          &kp V           &kp B                                     &kp HOME      &kp PG_UP                        &kp N   &kp M              &kp COMMA      &kp DOT         &kp FSLH       &kp RSHFT
-&to 0          &kp GRAVE  &mt LCTRL CAPSLOCK  &mt LALT LEFT  &mt LGUI RIGHT          &lt 1 BACKSPACE  &lt 7 LG(GRAVE)  &kp END       &kp PG_DN  &kp ENTER  &kp SPACE          &mt RGUI UP_ARROW  &mt RALT DOWN  &mt RCTRL LBKT  &kp RBKT       &mo 8
+&kp BACKSLASH  &kp N1     &kp N2              &kp N3         &kp N4          &kp N5  &tog 0                                                              &mo 0      &kp N6     &kp N7             &kp N8         &kp N9          &kp N0             &kp EQUAL
+&kp TAB        &kp Q      &kp W               &kp E          &kp R           &kp T   &trans                                                              &trans     &kp RA(Y)  &kp RA(U)          &kp RA(I)      &kp RA(O)       &kp P              &kp MINUS
+&kp ESC        &kp A      &kp S               &kp D          &kp F           &kp G   &to 1          &kp LGUI         &kp LALT      &kp RALT   &kp RGUI   &to 0      &kp RA(H)  &kp RA(J)          &kp RA(K)      &kp RA(L)       &kp RA(SEMICOLON)  &kp SQT
+&kp LSHFT      &kp Z      &kp X               &kp C          &kp V           &kp B                                   &kp HOME      &kp PG_UP                        &kp RA(N)  &kp RA(M)          &kp RA(COMMA)  &kp RA(DOT)     &kp RA(FSLH)       &kp RSHFT
+&to 0          &kp GRAVE  &mt LCTRL CAPSLOCK  &mt LALT LEFT  &mt LGUI RIGHT          &kp RA(SPACE)  &lt 7 LG(GRAVE)  &kp END       &kp PG_DN  &kp ENTER  &kp SPACE             &mt RGUI UP_ARROW  &mt RALT DOWN  &mt RCTRL LBKT  &kp RBKT           &mo 8
             >;
         };
     };
